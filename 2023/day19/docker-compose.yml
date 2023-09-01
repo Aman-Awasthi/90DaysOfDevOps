@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  notes-app:
+    container_name: "djando-notes-notes-app"
+    build: .
+    ports:
+      - 8000:8000
+  mysql_db:
+    container_name: "django-mysql-notes-db"
+    image: mysql:5.7
+    ports:
+      -3306:3306
+      environment:
+        - MYSQL_ROOT_PASSWORD: "test@123"
